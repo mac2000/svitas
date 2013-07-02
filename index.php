@@ -23,7 +23,9 @@
 		</div>
 		<div class="span4">
 			<?php get_search_form(); ?>
-			<?php wp_list_categories(); ?>
+			<ul class="unstyled">
+				<?php wp_list_categories('title_li='); ?>
+			</ul>
 			<p>TODO: ads</p>
 		</div>
 	</div>
