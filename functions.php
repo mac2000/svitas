@@ -138,3 +138,4 @@ function svitas_customize_css() {?>
 	</style>
 <?php }
 add_action('wp_head', 'svitas_customize_css');
+

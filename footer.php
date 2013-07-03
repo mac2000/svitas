@@ -3,15 +3,37 @@
 </div><!-- /.wrapper -->
 
 <div class="header">
-	<div class="container">
-		header
-	</div>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <?php wp_nav_menu(array(
+                'container_class' => 'container',
+                'menu_class' => 'nav'
+            ))?>
+        </div>
+    </div>
+    <div class="container">
+        <?php if(is_home()):?>
+            HOME
+        <?php else: ?>
+            SLIDER
+        <?php endif;?>
+    </div>
 </div>
 
 <div class="footer">
-	<div class="container">
-		footer
-	</div>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <?php wp_nav_menu(array(
+                'container_class' => 'container',
+                'menu_class' => 'nav'
+            ))?>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="container">
+            copyright
+        </div>
+    </div>
 </div>
 
 <?php wp_footer(); ?>

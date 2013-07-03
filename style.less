@@ -116,3 +116,83 @@ body > .wrapper {
 body > .footer, body > .wrapper > .push {
 	height: @footerHeight;
 }
+
+.footer {
+  background:#ebebeb;
+  font-size:@fontSizeSmall;
+  color:@gray;
+}
+
+// Typography
+.title {
+  font-size:@fontSizeLarge;
+  line-height:1.4;
+  margin-top:0;
+}
+
+// Forms
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  .box-shadow(inset 0 1px 8px rgba(8,41,58,.3));
+
+  // Focus state
+  &:focus {
+    .box-shadow(inset 0 1px 8px rgba(8,41,58,.3));
+  }
+}
+
+// Navbar
+.navbar-inner {
+  padding-left:0;
+  padding-right: 0;
+  .border-radius(0);
+}
+
+.navbar .container {
+  width:@gridRowWidth;
+}
+
+.header .navbar-inner,
+.footer .navbar-inner {
+  border-left:none;
+  border-right:none;
+}
+
+.header .navbar-inner {
+  border-top:none;
+  .box-shadow(inset 0 -1px 0 rgba(255, 255, 255, .25));
+}
+
+.footer .navbar-inner {
+  border-bottom:none;
+  .box-shadow(inset 0 1px 0 rgba(255, 255, 255, .25));
+}
+
+// Thumbnails
+.thumbnail {
+  padding: 1px;
+  border: 1px solid #ddd;
+  .border-radius(0);
+  .box-shadow(none);
+  .transition(all .2s ease-in-out);
+}
+// Add a hover/focus state for linked versions only
+a.thumbnail:hover,
+a.thumbnail:focus {
+  border-color: #ddd;
+  .box-shadow(none);
+}
