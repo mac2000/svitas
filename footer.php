@@ -31,7 +31,7 @@
     </div>
     <div class="copyright">
         <div class="container">
-            copyright
+             <?php echo get_option('footer_copyright'); ?>
         </div>
     </div>
 </div>

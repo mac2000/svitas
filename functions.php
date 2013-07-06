@@ -50,7 +50,7 @@ function svitas_customize_register($wp_customize) {
 	));
 
 	// Customize settings
-	$wp_customize->add_setting('link_color', array(
+	/*$wp_customize->add_setting('link_color', array(
 		'default' => '#000000',
 		'transport' => 'refresh'
 	));
@@ -58,7 +58,7 @@ function svitas_customize_register($wp_customize) {
 		'label' => __('Link Color', 'svitas'),
 		'section' => 'svitas',
 		'settings' => 'link_color',
-	)));
+	)));*/
 
 	$wp_customize->add_setting('header_height', array(
 		'default' => 100,
@@ -80,7 +80,7 @@ function svitas_customize_register($wp_customize) {
 		'settings' => 'footer_height',
 	)));
 
-	$wp_customize->add_setting('header_logo', array(
+	/*$wp_customize->add_setting('header_logo', array(
 		'default' => bloginfo('template_url') . '/images/header_logo.png',
 		'transport' => 'refresh'
 	));
@@ -88,9 +88,9 @@ function svitas_customize_register($wp_customize) {
 		'label' => __('Header logo', 'svitas'),
 		'section' => 'svitas',
 		'settings' => 'header_logo',
-	)));
+	)));*/
 
-	$wp_customize->add_setting('footer_logo', array(
+	/*$wp_customize->add_setting('footer_logo', array(
 		'default' => 100,
 		'transport' => 'refresh'
 	));
@@ -98,6 +98,17 @@ function svitas_customize_register($wp_customize) {
 		'label' => __('Footer logo', 'svitas'),
 		'section' => 'svitas',
 		'settings' => 'footer_logo',
+	)));*/
+
+	$wp_customize->add_setting('footer_copyright', array(
+		'type' => 'option',
+		'default' => 'Copyright',
+		'transport' => 'refresh'
+	));
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'footer_copyright', array(
+		'label' => __('Footer copyright', 'svitas'),
+		'section' => 'svitas',
+		'settings' => 'footer_copyright',
 	)));
 }
 add_action('customize_register', 'svitas_customize_register');
@@ -121,21 +132,27 @@ function svitas_customize_css() {?>
 		body > .footer, body > .wrapper > .push {
 			height: <?php echo get_theme_mod('footer_height'); ?>px;
 		}
-
-		/* Header logo */
-		.header {
-			background-image:url(<?php echo get_theme_mod('header_logo'); ?>);
-		}
-
-		/* Footer logo */
-		.footer {
-			background-image:url(<?php echo get_theme_mod('footer_logo'); ?>);
-		}
-
-		a {
-			color:<?php echo get_theme_mod('link_color'); ?>;
-		}
 	</style>
 <?php }
 add_action('wp_head', 'svitas_customize_css');
 
+
+function get_post_categories_labels() {
+	return array_map(function($category){
+//print_r($category);
+		echo get_category_link($categoriy->term_id);
+		return '<a class="label" href="' . get_category_link($categoriy->cat_ID) . '">' . $category->name . '</a>';
+	}, get_the_category());
+}
+
+function post_categories_labels($separator = ' ') {
+	echo implode($separator, get_post_categories_labels());
+}
+
+function svitas_list_categories() {
+	$ids = array_filter(get_all_category_ids(), function($id){ return $id != 1; });
+	$links = array_map(function($id){
+		return '<a class="label" href="' . get_category_link($id) . '">' . get_cat_name($id) . '</a>';
+	}, $ids);
+	echo '<ul class="unstyled"><li>' . implode('</li><li>', $links) . '</li></ul>';
+}

@@ -1,0 +1,203 @@
+/*
+Theme Name: Svitas
+Theme URI: https://github.com/mac2000/svitas
+Author: Marchenko Alexandr <marchenko.alexandr@gmail.com>
+Author URI: http://mac-blog.org.ua/
+Description: Svitas wp theme
+Version: 0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: light, gray, white, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Text Domain: svitas
+*/
+
+@import "//code.jquery.com/ui/1.9.2/themes/south-street/jquery-ui.css";
+@import "//netdna.bootstrapcdn.com/twitter-bootstrap/latest/css/bootstrap-combined.min.css";
+
+body {
+  font-family:Calibri, Arial, sans-serif;
+  font-size:17px;
+  color:#303030;
+}
+
+body > .header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100px;
+}
+
+body.logged-in > .header {
+  top: 28px;
+}
+
+body > .wrapper > .container {
+  padding-top: 120px;
+  padding-bottom: 20px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body > .wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -100px;
+}
+
+body > .footer,
+body > .wrapper > .push {
+  height: 100px;
+}
+
+.footer {
+  background: #ebebeb;
+  font-size: 14.45px;
+  color: #535353;
+}
+
+.title {
+  font-size: 21.25px;
+  line-height: 1.4;
+  margin-top: 0;
+}
+
+.title a {
+  color:#303030;
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  -webkit-box-shadow: inset 0 1px 8px rgba(8, 41, 58, 0.3);
+  -moz-box-shadow: inset 0 1px 8px rgba(8, 41, 58, 0.3);
+  box-shadow: inset 0 1px 8px rgba(8, 41, 58, 0.3);
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  -webkit-box-shadow: inset 0 1px 8px rgba(8, 41, 58, 0.3);
+  -moz-box-shadow: inset 0 1px 8px rgba(8, 41, 58, 0.3);
+  box-shadow: inset 0 1px 8px rgba(8, 41, 58, 0.3);
+}
+
+.navbar-inner {
+  padding-left: 0;
+  padding-right: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+.navbar-inner > .container > ul > li > a {
+  border-right: 1px solid #3ba143;
+  border-left: 1px solid #44c34d;
+  -webkit-box-shadow: 1px 0 0 #44c34d;
+  -moz-box-shadow: 1px 0 0 #44c34d;
+  box-shadow: 1px 0 0 #44c34d;
+}
+
+.navbar-inner > .container > ul > li.current-menu-item > a {
+  -webkit-box-shadow: 1px 0 0 #44c34d, inset 0 0 8px rgba(0, 0, 0, .25);
+  -moz-box-shadow: 1px 0 0 #44c34d, inset 0 0 8px rgba(0, 0, 0, .25);
+  box-shadow: 1px 0 0 #44c34d, inset 0 0 8px rgba(0, 0, 0, .25);
+}
+
+.navbar-inner > .container > ul {
+  -webkit-box-shadow: -1px 0 0 #3ba143;
+  -moz-box-shadow: -1px 0 0 #3ba143;
+  box-shadow: -1px 0 0 #3ba143;
+}
+
+.navbar .container {
+  width: 940px;
+}
+
+.header .navbar-inner,
+.footer .navbar-inner {
+  border-left: none;
+  border-right: none;
+}
+
+.header .navbar-inner {
+  border-top: none;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.25);
+  -moz-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.footer .navbar-inner {
+  border-bottom: none;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.thumbnail {
+  padding: 1px;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+a.thumbnail:hover,
+a.thumbnail:focus {
+  border-color: #ddd;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  text-decoration: none;
+}
+
+.label {
+  background:white;
+  color:#303030;
+  text-shadow:none;
+  box-shadow:none;
+  border:1px solid #303030;
+}
+
+a.label:hover {
+  color:#303030;
+}

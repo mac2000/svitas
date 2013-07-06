@@ -12,7 +12,7 @@
                 </a>
                 <div class="media-body">
                     <h2 class="title"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-                    <p><?php the_category(' ') ?></p>
+                    <p><?php post_categories_labels()?></p>
                 </div>
 			</div><!-- /.media -->
 <?php endwhile;?>
@@ -22,11 +22,7 @@
     </div>
     </div><!-- /.span8 -->
     <div class="span4">
-        <?php get_search_form(); ?>
-        <ul class="unstyled">
-            <?php wp_list_categories('title_li='); ?>
-        </ul>
-        <p>TODO: ads</p>
+        <?php get_sidebar();?>
     </div><!-- /.span4 -->
     </div>
 <?php else: ?>
