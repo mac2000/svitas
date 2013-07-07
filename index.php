@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+<div class="container">
 <?php if (have_posts()) :?>
     <div class="row">
         <div class="span8">
@@ -32,4 +32,5 @@
 		<?php get_search_form(); ?>
 	</div><!--noResults-->
 <?php endif; ?>
+</div>
 <?php get_footer(); ?>

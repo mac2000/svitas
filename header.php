@@ -23,5 +23,20 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div class="wrapper">
-<div class="container">
+<div class="header">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <?php wp_nav_menu(array(
+                'container_class' => 'container',
+                'menu_class' => 'nav'
+            ))?>
+        </div>
+    </div>
+    <div class="container">
+        <?php if(is_front_page()):?>
+            HOME
+        <?php else: ?>
+            SLIDER
+        <?php endif;?>
+    </div>
+</div>

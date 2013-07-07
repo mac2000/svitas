@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+<div class="container">
 <div class="row">
     <div class="span8">
         <?php while (have_posts()) : the_post(); ?>
@@ -24,5 +24,5 @@
         <?php get_sidebar();?>
     </div><!-- /.span4 -->
 </div>
-
+</div>
 <?php get_footer(); ?>

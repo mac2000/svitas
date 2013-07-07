@@ -1,0 +1,52 @@
+.accordion-group {
+  border:none;
+  margin-bottom:10px;
+}
+
+.accordion-heading {
+  border:1px solid #ccc;
+  background:#efefef;
+  #gradient.horizontal(#efefef, #ebeeef);
+  .box-shadow(inset 0 1px 1px @white);
+  .border-radius(3px);
+
+  .accordion-toggle {
+    padding:20px 25px;
+  }
+}
+
+.accordion-body.in {
+  margin:0 5px;
+  background:#f6f8f8;
+
+  position:relative;
+  overflow: visible;
+
+  .accordion-inner {
+    padding:20px;
+
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.accordion-body.in {
+  border:1px solid #ccc;
+  border-top:none;
+}
+
+  .accordion-body.in:after {
+    content:'.';
+    position:absolute;
+    left:-5px;
+    right:-5px;
+    bottom:-5px;
+    height:8px;
+    overflow:hidden;
+    border:1px solid #ccc;
+    background:#efefef;
+    #gradient.horizontal(#efefef, #ebeeef);
+    .box-shadow(inset 0 1px 1px @white);
+    .border-radius(0 0 3px 3px);
+  }
