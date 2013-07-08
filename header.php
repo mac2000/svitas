@@ -32,11 +32,11 @@
             ))?>
         </div>
     </div>
-    <div class="container">
-        <?php if(is_front_page()):?>
-            HOME
-        <?php else: ?>
-            SLIDER
-        <?php endif;?>
-    </div>
+    
+    <?php if(is_front_page()):?>
+        HOME
+    <?php else: ?>
+        <?php include 'partials/slider.php'; ?>
+    <?php endif;?>
+    
 </div>

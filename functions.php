@@ -224,6 +224,19 @@ function svitas_save_standard_service($post_id, $post) {
 add_action('save_post', 'svitas_save_standard_service', 1, 2);
 
 function svitas_init() {
+	// Services -> Service
+    register_post_type('slider',
+        array(
+            'labels' => array(
+                'name' => __('Slider', 'svitas'),
+                'singular_name' => __('Slider', 'svitas')
+            ),
+            'public' => true,
+            'exclude_from_search' => true,
+            'publicly_queryable' => true,
+            'supports' => array('title', 'thumbnail', 'editor')
+        )
+    );
 
 	// About Us -> Partners
 	register_post_type('partner',
